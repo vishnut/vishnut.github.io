@@ -1,1 +1,1 @@
-Hello. This is Vishnu. The website is still under construction but feel free to look around.
+Hello! Welcome to my personal website. The website is still under construction but feel free to look around or get in touch with me if you wish to know more. I typically respond to emails within a couple of hours.  
