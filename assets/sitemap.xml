@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+            
+<url>
+  <loc>http://vishnut.me/</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/index.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.40</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/coursework.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/experience.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/projects.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/blog.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/resume.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/assets/pdfs/VishnuMidtermReport.pdf</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/assets/pdfs/VishnuFinalReport.pdf</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/intelliwallpaper.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/text-transparency.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/CS373.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/Resume.pdf</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/CS373/week4.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/CS373/week3.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/CS373/week2.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+<url>
+  <loc>http://vishnut.me/CS373/week1.html</loc>
+  <lastmod>2017-02-11T23:53:12+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.20</priority>
+</url>
+</urlset>
