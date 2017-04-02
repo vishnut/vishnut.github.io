@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Hello! Welcome to my personal website. Feel free to look around or get in touch with me if 
+	you wish to know more. I typically respond to emails within a couple of hours. 
+	This stylesheet is a customized version of Forty by HTML5 UP used under the CCA 3.0 license.
+	I love doggo memes.
+-->
+<html>
+
+<head>
+	<title>Week 10 - CS373 Spring 2017: Vishnu Thiagarajan</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="logo"><strong>Vishnu</strong> <span>Thiagarajan</span></a>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../CS373.html">Blog</a>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main" class="alt">
+
+			<!-- One -->
+			<section id="one">
+				<div class="inner">
+					<span class="image"><img src="profpic.jpg" style="max-width: 70%;" alt="" /></span>
+<header class="major">
+	<h1>Week 10</h1>
+	<h3>Software Engineering (CS 373) Spring 2017</h3>
+</header>
+<b>What did you do this past week?</b>
+<p>	I have been working on Phase 2 of the IDB project. During this phase, we are expected to convert our static website from
+	Phase 1 into a dynamic website. We thought this would be simple since we hd already made our Phase 1 website dynamic. THe 
+	difference was that while we had manually added 3 rows to each table in the first phase, now, we would need close to 1000 rows.
+	We would need to use RESTful APIs to fill our database. Our problem started with Crunchbase, our data source, limiting the amount of data we 
+	could get using their REST API. This is expected since this data is extremely valuable to them. However, for us, we would need a lot more
+	data. For this reason, we had to find a workaround and this was through the use of an older snapshot that they provide for free.
+	Merging the current REST API data with this older data would give us what we need. The biggest difficulty we have been having is 
+	integrating the data from the old snapshot. It is much harder to integrate with our table since it comes in the form of large files. 
+	Although we got the data from the REST API in a couple of hours, we have spent far longer on the snapshot data and there is still 
+	a lot of work left. Adding to this, snapshot does not have data specific to schools, one of our models, since at the time, Crunchbase did not have
+	schools as a model. We will need to use an additional API to get this information.<br/><br/>
+
+	The next difficulty we have been having this week has to do with Amazon's RDS (Relational Database Service) and our EC2 instance. It has 
+	been giving us frequent issues and everytime the database reboots, the website goes down. Since we made our website dynamic in 
+	the first phase, our database issues were especially problematic. Our hope is that the graders did not get internal server errors when
+	they were accessing the website or if they did, they checked back in a couple of minutes so that the database would be back up.<br/><br/>
+
+	This week, we also had a talk by Atlassian. They talked about all of their technologies and some of the issues they encountered. 
+	Specifically, they talked about using spikes to solve an optimization issue in HipChat. Having used JIRA and Trello, it was interesting
+	to hear about the Atlassian work environment directly from the engineers.
+</p>
+<b>What's in your way?</b>
+<p> Right now, the biggest issue is getting all of the data into the database. We are hoping to get this done by Monday. 
+</p>
+<b>What will you do next week?</b>
+<p> We have major front-end changes that need to be deployed to our live website. We'll be changing some template files to display
+	all cards. When we do this, one problem we anticipate is a slow front-end sort and filter. If this is indeed the case, we might 
+	have to move this to the back-end.
+</p>
+<b>What’s my experience of the class?</b>
+<p> I have been enjoying class over the last week. We have continued talking about relational algebra in class and I like using 
+	current technologies in our projects outside of class. The last two weeks have been busy but certainly quite fun as well.
+</p>
+<b>What's my pick-of-the-week or tip-of-the-week?</b>
+<p> Today is April Fools' Day and that means a lot of Google pranks. You have probably seen Google Gnome and Pac-Maps already but there have
+	been so many more pranks. Check out <a href="http://www.theverge.com/2017/3/31/15140206/google-best-april-fools-jokes-roundup-2017" target="_blank"> this
+	compilation.</a>
+	
+	Next, for APIs that do not have good documentation, try using <a href="http://jsonlint.com" target="_blank">JSONLint</a> to format returned 
+	responses and figure out what to do with your data. It can handle large inputs although it can take some time.
+</div>
+</section>
+
+</div>
+
+<!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto: vishnut@utexas.edu?Subject=Hi%20Vishnu!" target="_top">vishnut@utexas.edu</a>
+					<br>
+					<a href="mailto: thiagarajanvishnu@gmail.com?Subject=Hi%20Vishnu!" target="_top">thiagarajanvishnu@gmail.com</a>
+					</br>
+				</div>
+			</section>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<a href="tel:281-725-0635">(281) 725-0635</a><br/>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="http://github.com/vishnut" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+			<li><a href="http://linkedin.com/in/vishnuthiagarajan" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+			<!--li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li-->
+			<li><a href="http://facebook.com/wishnut" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+			<!--li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li-->
+		</ul>
+		<ul class="copyright">
+			<li>&copy; Vishnu Thiagarajan</li>
+			<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
