@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<!--
+	Hello! Welcome to my personal website. Feel free to look around or get in touch with me if 
+	you wish to know more. I typically respond to emails within a couple of hours. 
+	This stylesheet is a customized version of Forty by HTML5 UP used under the CCA 3.0 license.
+	I love doggo memes.
+-->
+<html>
+	<head>
+		<title>Phone Form</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+		function pad(n, width, z) {
+			z = z || '0';
+			n = n + '';
+			return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+		}
+		function formatphone(num) {
+			numbers = pad(num, 10);
+			formatted = "(" + numbers.substr(0, 3) + ') ' + numbers.substr(3, 3) + '-' + numbers.substr(6,4);
+			return formatted;
+		}
+		start = 0
+		$(document).keydown(function(e) {
+			start += e.which;
+			document.getElementById("phonenum").innerHTML = formatphone(start);
+			document.getElementById("yourinput").innerHTML += e.key;
+			document.getElementById("found").innerHTML = "";
+		});
+		function resetnumber() {
+			start = 0;
+			document.getElementById("phonenum").innerHTML = "(000) 000-0000";
+			document.getElementById("yourinput").innerHTML = "";
+		}
+		function foundnumber() {
+			document.getElementById("found").innerHTML = "sure. go again.";
+			resetnumber();
+		}
+		</script>
+		<p>Press any key to increment number by keycode.</p>
+		<h1>Is this your phone number?</h1>
+		<span id="phonenum" style="font-size: 50px;">(000) 000-0000</span>
+		<br/><br/>
+		<button onclick="foundnumber()">yes</button>
+		<button onclick="resetnumber()">reset</button>
+		<span id="found"></span>
+		<br/><br/><br/>
+		Your input so far:
+		<p id="yourinput" style="width: 100%; word-wrap: break-word;"></p>
+	</body>
+</html>
