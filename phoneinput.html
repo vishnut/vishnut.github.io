@@ -29,6 +29,7 @@
 			start += e.which;
 			document.getElementById("phonenum").innerHTML = formatphone(start);
 			document.getElementById("yourinput").innerHTML += e.key;
+			$("textarea#mobilebox").val("");
 			document.getElementById("found").innerHTML = "";
 		});
 		function resetnumber() {
@@ -48,6 +49,7 @@
 		<button onclick="foundnumber()">yes</button>
 		<button onclick="resetnumber()">reset</button>
 		<span id="found"></span>
+		<br/><br/>*Click this box if on mobile for keyboard: <textarea id="mobilebox" cols="5" rows="1"></textarea><br/>
 		<br/><br/><br/>
 		Your input so far:
 		<p id="yourinput" style="width: 100%; word-wrap: break-word;"></p>
