@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Hello! Welcome to my personal website. Feel free to look around or get in touch with me if 
+	you wish to know more. I typically respond to emails within a couple of hours. 
+	This stylesheet is a customized version of Forty by HTML5 UP used under the CCA 3.0 license.
+	I love doggo memes.
+-->
+<html>
+
+<head>
+	<title>Week 12 - CS373 Spring 2017: Vishnu Thiagarajan</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="logo"><strong>Vishnu</strong> <span>Thiagarajan</span></a>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../CS373.html">Blog</a>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main" class="alt">
+
+			<!-- One -->
+			<section id="one">
+				<div class="inner">
+					<span class="image"><img src="profpic.jpg" style="max-width: 70%;" alt="" /></span>
+<header class="major">
+	<h1>Week 12 - Hacked?</h1>
+	<h3>Software Engineering (CS 373) Spring 2017</h3>
+</header>
+<b>What did you do this past week?</b>
+<p>	This week, I started work on Phase 3 of the IDB project. The two majors tasks of this phase are implementing search for 
+	all attributes and all models in our database and creating a visualization of another group's project using 
+	<a href="https://d3js.org" target="_blank">D3</a>. So far, we have finished implementing search. We started off using 
+	<a href="https://pypi.python.org/pypi/Flask-WhooshAlchemy" target="_blank">Flask-WhooshAlchemy</a> which integrates well with 
+	<a href="http://flask-sqlalchemy.pocoo.org/2.1/" target="_blank">Flask-SQLAlchemy</a>. One issue with this library is that it 
+	is not very actively maintained and it only indexes rows as they are added or deleted. They do not index anything already 
+	in the database. So, we switched to using <a href="https://github.com/Revolution1/Flask-WhooshAlchemyPlus" target="_blank">
+	Flask-WhooshAlchemyPlus</a>, a fork of the original library but one that has a function to index all rows already in the 
+	database. It does not, however, support terms, something that <a href="https://pypi.python.org/pypi/Whoosh/" target="_blank">
+	Whoosh</a> on its own does.
+</p>
+<b>What's in your way?</b>
+<p> While the consequences of our web page going down right now are low, this week we realized the tremendous difficulty of 
+	true site reliability. On Thursday, at 5:43pm, our page suddenly went down. I was SSH'd into the EC2 instance at the time
+	and I was messing with our search. Right at that moment though, our entire website went down and we got a popup
+	saying something along the lines of 'Your machine has been infected.' and a mailcious redirect to compliance-jessica.xyz/a.php.
+	Immediately, I posted on our group chat and as expected, every one was seeing the same issue on our page.</p> 
+<p>	My first guess was 
+	that we were hacked. We certainly had not taken proper security measures but at the same time, it did not make sense for someone
+	to want to hack into our website. I first checked Namecheap to see if it was now somehow pointing to a different IP but that
+	was not the case. Next, I checked our AWS EC2 instance and directly visited the Public DNS/IP of the instance but again,
+	I got the popup and redirect. Being SSH'd on the EC2 instance, I knew that the major files were not changed but just to 
+	confirm I performed a <code>git status</code> but as expected, the only changes were the ones I had made in the last 10
+	minutes. I checked what Apache was pointing to and the contents of our wsgi file but everything was exactly as it should
+	have been. Google was not immediately very helpful either. Just to be safe, I changed all of our security settings to be
+	as strict as possible and I disallowed POST requests to our Public API. Still, the problem was far from fixed. At 6:03pm,
+	a full 20 minutes from the start of the problem, the website was back up. </p>
+<p>	We hadn't done anything but the website 
+	was back. It was still not over, though. Javascript was not running on the model pages. I checked the console and 
+	apparantly, our grid was missing the isotope() function. Instantly, we knew what the issue was. 
+	<a href="http://isotope.metafizzy.co" target="_blank">Isotope</a> is the plugin we use to display our grid system. It was also 
+	used in initial phases for sorting and filtering but that functionality has since been moved to the back-end in order
+	to optimize speed. If Isotope's library was malfunctioning, it would explain why Javascript was not running and why
+	our grid was not looking right on the desktop site. We opened the link to the Isotope JS file and *boom*, there was 
+	compliance-jessica again. We looked up the issue again but by this time, we knew that we were not directly hacked and that
+	this issue was affected more people that just us. There was now a 
+	<a href="https://news.ycombinator.com/item?id=14111499" target="_blank">post on Hacker News</a>. <a href="https://unpkg.com" target="_blank">Unpkg</a>
+	had pushed a bad nameserver update and sites using their CDN were all experiencing problems. Unpkg is a major CDN, recommended
+	by Facebook for use of the React library and it also hosts the Isotope library. Yet, one faulty update by someone somewhere later, our website was down. There
+	are certainly many lessons for us here. Especially for a site in production, the less dependencies, the better. If you need
+	an external library, host it locally or use subresource integrity. Test updates before modifying the production version. Not all of these safeguards may be 
+	*necessary* or possible for a short-term project like this one but when creating something truly impactful in the future, these are issues that we must keep in mind.
+</p>
+<b>What will you do next week?</b>
+<p> I have an Algo problem set due on Tuesday. IEEE Robotics and Automation also has officer elections on Tuesday. While
+	I would love to run (I am a current officer), I am waiting for word from a few companies so that I can figure out
+	my Fall 2017 status. I also need to fix a bug with our search's highlighting. When users request a multi-word search,
+	right now, the second word search will search the html tags added by the first word's iteration of search and 
+	replace as well. It should not be too difficult of a fix with RegEx. 
+</p>
+<b>What’s my experience of the class?</b>
+<p> We are now talking about refactoring in class. This is following the assigned class reading of the
+	<a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/?tag=utgracs" target="_blank">
+	Refactoring book</a>. It was a good book but my one complaint was that, given the content of the book, it would have
+	been better suited as a video lecture. It is much easier to follow code changes when seeing it being done than when 
+	flipping through before and after code spanning multiple pages on a book. Professor Downing is going through the 
+	examples in class now and it really is a much better way to teach refactoring. 
+</p>
+<b>What's my pick-of-the-week or tip-of-the-week?</b>
+<p> If your group is having difficulty implementing search, check our <a href="https://github.com/Revolution1/Flask-WhooshAlchemyPlus" target="_blank">
+	Flask-WhooshAlchemyPlus.</a>
+	<ul>
+	Here are some resources I found to ensure the content you get from a CDN is what you expect:
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a></li>
+	<li><a href="https://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/">Script Fallback</a></li>
+	</ul>
+</p>
+</div>
+</section>
+
+</div>
+
+<!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto: vishnut@utexas.edu?Subject=Hi%20Vishnu!" target="_top">vishnut@utexas.edu</a>
+					<br>
+					<a href="mailto: thiagarajanvishnu@gmail.com?Subject=Hi%20Vishnu!" target="_top">thiagarajanvishnu@gmail.com</a>
+					</br>
+				</div>
+			</section>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>Phone</h3>
+					<a href="tel:281-725-0635">(281) 725-0635</a><br/>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<ul class="icons">
+			<li><a href="http://github.com/vishnut" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+			<li><a href="http://linkedin.com/in/vishnuthiagarajan" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+			<!--li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li-->
+			<li><a href="http://facebook.com/wishnut" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+			<!--li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li-->
+		</ul>
+		<ul class="copyright">
+			<li>&copy; Vishnu Thiagarajan</li>
+			<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
