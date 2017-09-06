@@ -64,8 +64,9 @@
 									
 									<h3>Launch an EC2 instance</h3>
 									<p>In the EC2 console, select an Ubuntu Server (t2.micro for free tier) and launch. Select an existing key pair
-									or create a new key pair and save it to your computer. I will save it as<code>keypair.pem</code>. Once the instance
-									is running, we can connect to it.</p>
+									or create a new key pair and save it to your computer. I will save it as<code>keypair.pem</code>. As for the security
+									group, add HTTP and HTTPS in the inbound rules section with the source set to Anywhere. Now, once the instance is 
+									running, we can connect to it.</p>
 									<h3>Connect to the EC2 instance</h3>
 									Open a terminal session in the directory where you have saved the key pair. Set permissions on the file.
 									<pre><code>$ chmod 400 keypair.pem</code></pre>
