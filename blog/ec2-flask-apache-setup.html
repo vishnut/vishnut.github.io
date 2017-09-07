@@ -120,8 +120,7 @@ if __name__ == "__main__":
 									Paste the following code in.
 									<pre class="prettyprint" style="border:0;padding:0;"><code class="language-python">activate_this = '/home/ubuntu/flaskproject/venv/bin/activate_this.py'
 with open(activate_this) as f:
-    code = compile(f.read(), activate_this, 'exec')
-    exec(code, dict(__file__=activate_this))
+	exec(f.read(), dict(__file__=activate_this))
 
 import sys
 import logging
