@@ -112,8 +112,9 @@ def hello_world():
 if __name__ == "__main__":
     app.run()</code></pre>
 									<h3>Setup Apache</h3>
-									Install mod_wsgi
-									<pre><code>$ sudo apt-get install apache2 libapache2-mod-wsgi</code></pre>
+									Install mod_wsgi, make sure to have '-py3' at the end of <code>libapache2-mod-wsgi-py3</code>
+									or the runtime will default to Python2.7
+									<pre><code>$ sudo apt-get install apache2 libapache2-mod-wsgi-py3</code></pre>
 									Create a wsgi file.
 									<pre><code>$ vi app.wsgi</code></pre>
 									Paste the following code in.
@@ -135,13 +136,6 @@ from app import app as application</code></pre>
 									<pre><code>$ sudo a2enmod wsgi</code></pre>
 									Configure apache (you will need to sudo to edit the file)
 									<pre><code>$ sudo vi /etc/apache2/sites-enabled/000-default.conf</code></pre>
-									Paste this at the top of the file
-									<pre><code>WSGIPythonHome "/usr/local/bin"
-WSGIPythonPath "/home/ubuntu/flaskproject/venv/lib/python3.5/site-packages/"</code></pre>
-									<p><i>Note: Without these lines above, Python2.7 will be default. This specifically 
-										references Python3.5. Check <code>/home/ubuntu/flaskproject/venv/lib</code> 
-										to see which version to use. At the time of writing, the Python3 version 
-										available in EC2 is 3.5.2.</i></p>
 									Paste this in right after the line with <code>DocumentRoot /var/www/html</code>
 									<pre><code>WSGIDaemonProcess flaskproject threads=5
 WSGIScriptAlias / /var/www/html/flaskproject/app.wsgi
@@ -172,6 +166,9 @@ WSGIScriptAlias / /var/www/html/flaskproject/app.wsgi
 										<a href="http://www.commitstrip.com/en/2017/05/29/trapped/" target="_blank">Trapped</a><br/>
 										<a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/" target="_blank">Stack Overflow: Helping One Million Developers Exit Vim</a>
 									</p>
+									<b>The error log is way too long</b>									
+									<p>To clear the log, run</p>
+									<pre><code>sudo bash -c 'echo > /var/log/apache2/error.log'</code></pre>
 									<b>Mistakes in the guide</b>
 									<p>If you find any mistakes here or find that something needs an update, feel free to send me an email.</p>
 									</div>
