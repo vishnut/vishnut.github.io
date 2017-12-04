@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Hello! Welcome to my personal website. Feel free to look around or get in touch with me if 
+	you wish to know more. I typically respond to emails within a couple of hours. 
+	This stylesheet is a customized version of Forty by HTML5 UP used under the CCA 3.0 license.
+	I love doggo memes.
+-->
+<html>
+	<head>
+		<title>Prodactive</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Vishnu</strong> <span>Thiagarajan</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="coursework.html">Coursework</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li><a href="projects.html">Personal Projects</a></li>
+							<li><a href="blog.html">Blog</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="resume.html" class="button special fit">Résumé</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Prodactive</h1>
+										<h3>Active Productivity Monitoring Tool</h3>
+									</header>
+									<span class="image main"><img src="images/prodactive.png" style="max-width: 300px;background-color: #222;" alt="" /></span>
+									<a href="https://github.com/pranaynaki/ProdActive" class="button special" target="_blank">GitHub Repo</a> &nbsp;
+									<a href="http://prodactive.tech" class="button special" target="_blank">Demo Website</a><br/><br/>
+									<p>This was my team project for HackTX 2017. It was a top 10 finalist project and we also won best use awards from sponsors.</p>
+									<h3>The Tool</h3>
+									<p>The goal with building this tool is to have a fully functional productivity application that can actively engage with a user and help the user be more
+										productive. There are many content blockers and many to-do-lists but our vision was to have something run in the background that both manages the user's
+										time and ensures that the user is being productive. The result was Prodactive.
+										<ul>
+										<li>Chrome Extension</li>
+										<li>Edge Extension</li>
+										<li>Cortana Bot</li>
+										<li>Website</li>
+										</ul>
+									</p>
+									<h3>Use Case</h3>
+									<img src="images/break.gif" style="max-width: 350px;"="" /> &nbsp; <img src="images/task.gif" style="max-width: 350px;"="" /><br/>
+									<p>We started off reading about a John Hopkins' research study on ways to improve productivity. We then looked into how we could put these methods into practice. First, we decided on the techniques we found most essential for improving productivity, and from there, we implemented them in an integrated manner as a Microsoft Edge and Chrome extension that would be convenient and not distracting to the user.</p>
+									<p>Some of the features we successfully implemented include creating a scheduling mechanism that allows the user to plan a task from start to completion, given an estimated duration of the task. This sets us apart from other productivity apps, since we schedule tasks in terms of the time they will take to complete, as opposed to setting aside chunks of a day to finish something. This more closely simulates how normal people get work done. The scheduler automatically alerts the user when to take breaks or continue working. It also allows the user to choose between several modes of working, such as casual, productive, or time crunch. We also keep track of the time a user spends on any particular website using Chrome and Edge extensions. This allows our extension to actively alert the user whenever they have exceeded a certain amount of time on "unproductive" websites. These should be customizable by the user but they may include websites such as Facebook, Twitter, and YouTube. All of these websites can be used to both boost and limit productivity - so, a user will need to define this by their specific needs. The application will then be able to tell what time is actually used on productive websites as opposed to leisure sites. Depending on the settings, the tool will be able to completely block the page. Of course, once the tool determines that the user is on break, the restrictions will be relaxed.</p>
+									<p>We integrated with Microsoft's bot framework so that users can easily schedule tasks (using text or voice commands). LUIS allowed us to extract intents from the user-inputted command using Machine Learning, and we then make an API call to the Azure server to log the task and start the timer. The Azure server is also used to aggregate user data for statistics about time spent on different websites. On the front end side, this data is displayed on a custom website that also allows users to input tasks manually, see the amount of time they have left on a certain task, and view their personal statistics in a user-friendly format.</p>
+
+									<h3>Usage</h3>
+									<p>Download the extension from the GitHub linked above and upload the extension to your browser. Once the extension is active, settings, monitoring, and analytics will be on <a href="http://prodactive.tech" target="_blank">prodactive.tech</a>.</p>
+
+									<h3>My Role</h3>
+									<p>Although not linked to me on GitHub since I did not push with my account, I was responsible for the website and for the server. I built the entire website component to the project 
+										and most of the API. I also designed and wrote the event scheduler, the extension UI, and the link between the website and the extensions/bots.
+									</p>
+									
+									<h3>Next Steps</h3>
+									<p>The tool does not support user login. Integrating with Facebook or some third-party service would help with this. Until then, all data is accumulated on the page. Also, 
+										there are some privacy concerns to be addressed. Usage data, although not linked to any user, is public. Use at your own risk ;)
+									</p>
+									
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="mailto: vishnut@utexas.edu?Subject=Hi%20Vishnu!" target="_top">vishnut@utexas.edu</a>
+										<br>
+										<a href="mailto: thiagarajanvishnu@gmail.com?Subject=Hi%20Vishnu!" target="_top">thiagarajanvishnu@gmail.com</a>
+										</br>
+									</div>
+								</section>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<a href="tel:281-725-0635">(281) 725-0635</a><br/>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="http://github.com/vishnut" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								<li><a href="http://linkedin.com/in/vishnuthiagarajan" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+								<!--li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li-->
+								<li><a href="http://facebook.com/wishnut" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+								<!--li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li-->
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Vishnu Thiagarajan</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-92157885-1', 'auto');
+				ga('send', 'pageview');
+			</script>
+	</body>
+</html>
