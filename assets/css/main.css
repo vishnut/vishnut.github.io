@@ -3540,9 +3540,9 @@
 				padding: 6em 0 2em 0 ;
 			}
 
-				#banner > .inner .content p br {
+				/* #banner > .inner .content p br {
 					display: none;
-				}
+				} */
 
 				#banner.major {
 					padding: 8em 0 4em 0 ;
